@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2021-12-23 17:24:17 by Eclipse SUMO GUI Version 1.11.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="data/highway.net.xml"/>
+        <route-files value="data/highway.rou.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="tripinfo.xml"/>
+    </output>
+
+    <time>
+        <step-length value="0.1"/>
+    </time>
+
+    <traci_server>
+        <remote-port value="52007"/>
+    </traci_server>
+
+    <gui_only>
+        <gui-settings-file value="data/highway.view.xml"/>
+        <tracker-interval value="0.1"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+    <tripinfo id="normal.114" depart="15.50" departLane="entry_1" departPos="5.10" departSpeed="15.00" departDelay="4.10" arrival="33.10" arrivalLane="exit_0" arrivalPos="57.04" arrivalSpeed="15.14" duration="17.60" routeLength="95947.26" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="5.02" rerouteNo="1" devices="tripinfo_normal.114 routing_normal.114" vType="normal_car" speedFactor="1.09" vaporized=""/>
+    <tripinfo id="normal.112" depart="15.10" departLane="entry_1" departPos="5.10" departSpeed="15.00" departDelay="3.90" arrival="33.50" arrivalLane="exit_1" arrivalPos="57.04" arrivalSpeed="15.07" duration="18.40" routeLength="95947.26" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="5.63" rerouteNo="1" devices="tripinfo_normal.112 routing_normal.112" vType="normal_car" speedFactor="1.10" vaporized=""/>
+    <tripinfo id="normal.251" depart="34.30" departLane="entry_0" departPos="5.10" departSpeed="15.00" departDelay="9.20" arrival="106.20" arrivalLane="exit_0" arrivalPos="57.04" arrivalSpeed="14.95" duration="71.90" routeLength="95947.26" waitingTime="0.10" waitingCount="1" stopTime="0.00" timeLoss="24.70" rerouteNo="1" devices="tripinfo_normal.251 routing_normal.251" vType="normal_car" speedFactor="1.08" vaporized=""/>
+    <tripinfo id="normal.295" depart="41.30" departLane="entry_2" departPos="5.10" departSpeed="15.00" departDelay="11.80" arrival="129.50" arrivalLane="exit_0" arrivalPos="57.04" arrivalSpeed="14.78" duration="88.20" routeLength="95947.26" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="20.56" rerouteNo="1" devices="tripinfo_normal.295 routing_normal.295" vType="normal_car" speedFactor="1.08" vaporized=""/>
+    <tripinfo id="normal.368" depart="52.20" departLane="entry_0" departPos="5.10" departSpeed="15.00" departDelay="15.40" arrival="131.20" arrivalLane="exit_1" arrivalPos="57.04" arrivalSpeed="16.30" duration="79.00" routeLength="95947.26" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="21.91" rerouteNo="1" devices="tripinfo_normal.368 routing_normal.368" vType="normal_car" speedFactor="1.18" vaporized=""/>
+    <tripinfo id="normal.211" depart="28.90" departLane="entry_1" departPos="5.10" departSpeed="15.00" departDelay="7.80" arrival="139.00" arrivalLane="exit_0" arrivalPos="57.04" arrivalSpeed="14.97" duration="110.10" routeLength="95947.26" waitingTime="0.00" waitingCount="0" stopTime="0.00" timeLoss="13.47" rerouteNo="1" devices="tripinfo_normal.211 routing_normal.211" vType="normal_car" speedFactor="1.08" vaporized=""/>
+</tripinfos>

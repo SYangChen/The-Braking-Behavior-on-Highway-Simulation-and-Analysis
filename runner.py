@@ -53,11 +53,11 @@ def run():
     prev_target = ""
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
-        print(traci.edge.getLastStepVehicleIDs('slow_area'))
+        # print(traci.edge.getLastStepVehicleIDs('slow_area'))
         #vehicles_id = traci.vehicle.getIDList()
         #target_vehicle = random.choice(vehicles_id)
         #current_speed = traci.vehicle.getSpeed(target_vehicle)
-        if step%2500 >= 0 and step%2500 <= 500:
+        if step%250 == 0 : # and step%2500 <= 500:
             vehicles = traci.edge.getLastStepVehicleIDs('slow_area')
             for v in vehicles:
                 traci.vehicle.slowDown(v, 0, 5)
@@ -95,5 +95,5 @@ if __name__ == "__main__":
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "data/highway.sumocfg",
-                             "--tripinfo-output", "tripinfo.xml","--step-length","0.01"])
+                             "--tripinfo-output", "tripinfo.xml","--step-length","0.1"])
     run()
