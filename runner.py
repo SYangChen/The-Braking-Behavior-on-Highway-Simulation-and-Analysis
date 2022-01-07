@@ -25,6 +25,7 @@ import os
 import sys
 import optparse
 import random
+import matplotlib.pyplot as plt
 
 # we need to import python modules from the $SUMO_HOME/tools directory
 if 'SUMO_HOME' in os.environ:
@@ -50,22 +51,46 @@ def run():
     """execute the TraCI control loop"""
     step = 0
     # we start with phase 2 where EW has green
-    prev_target = ""
+    speed_area_1 = []
+    speed_area_2 = []
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
         # print(traci.edge.getLastStepVehicleIDs('slow_area'))
         #vehicles_id = traci.vehicle.getIDList()
         #target_vehicle = random.choice(vehicles_id)
         #current_speed = traci.vehicle.getSpeed(target_vehicle)
-        if step%250 == 0 : # and step%2500 <= 500:
-            vehicles = traci.edge.getLastStepVehicleIDs('slow_area')
-            for v in vehicles:
-                traci.vehicle.slowDown(v, 0, 5)
+        
+        vehicles = traci.edge.getLastStepVehicleIDs('event_area')
+        if step > 0 and step % 800 == 0 : # and step%2500 <= 500:
+            v_num = len(vehicles)
+            for v in random.choices(vehicles, k = min(v_num, 3)):
+                traci.vehicle.slowDown(v, 0, 3)
+            plt.axvline(step, c='r')
+                
+        fastest_lane = -1
+        fastest_speed = -1
+        for i in range(3):
+            if traci.lane.getLastStepMeanSpeed('event_area_' + str(i)) > fastest_speed:
+                fastest_speed = traci.lane.getLastStepMeanSpeed('event_area_' + str(i))
+                fastest_lane = i
+                
+        #if step % 500 == 0:
+        #    for v in vehicles:
+        #        if random.uniform(0, 1) < 0.5:
+        #            traci.vehicle.changeLane(v, fastest_lane, 2)
+            
+        print(traci.edge.getLastStepMeanSpeed('effect_area_1'),traci.edge.getLastStepMeanSpeed('effect_area_2'))
+        speed_area_1.append(traci.edge.getLastStepMeanSpeed('effect_area_1'))
+        speed_area_2.append(traci.edge.getLastStepMeanSpeed('effect_area_2'))
         #if prev_target != "":
             #traci.vehicle.setSpeed(prev_target, -1)
         #prev_target = target_vehicle
         #print("set {}'s speed from {} to {}".format(target_vehicle, current_speed, traci.vehicle.getSpeed(target_vehicle)))
         step += 1
+    plt.plot(speed_area_1, label='edge1')
+    plt.plot(speed_area_2, label='edge2')
+    plt.legend()
+    plt.show()
     traci.close()
     sys.stdout.flush()
 

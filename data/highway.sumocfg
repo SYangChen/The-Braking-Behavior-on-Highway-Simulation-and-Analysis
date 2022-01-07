@@ -1,6 +1,6 @@
 <configuration>
    <input>
-       <net-file value="highway.net.xml"/>
+       <net-file value="highway1226.net.xml"/>
        <route-files value="highway.rou.xml"/>
 	   <gui-settings-file value="highway.view.xml"/>
    </input>

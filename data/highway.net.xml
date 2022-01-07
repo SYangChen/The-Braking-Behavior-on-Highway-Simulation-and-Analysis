@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2021-12-23 14:33:24 by Eclipse SUMO netedit Version 1.11.0
+<!-- generated on 2021-12-26 16:11:46 by Eclipse SUMO netedit Version 1.11.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="C:\Users\mvnlab\Desktop\IV\highway.net.xml"/>
+        <sumo-net-file value="D:\IV_final\NTU_IV_ButterFlyEffect\data\highway.net.xml"/>
     </input>
 
     <output>
-        <output-file value="C:\Users\mvnlab\Desktop\IV\highway.net.xml"/>
+        <output-file value="D:\IV_final\NTU_IV_ButterFlyEffect\data\highway.net.xml"/>
     </output>
 
     <processing>
@@ -40,6 +40,11 @@
 
     <location netOffset="0.00,0.00" convBoundary="38770.18,43084.14,121526.69,91645.03" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
 
+    <edge id=":J0_0" function="internal">
+        <lane id=":J0_0_0" index="0" speed="30.00" length="0.10" shape="39074.12,43253.21 39074.12,43253.21"/>
+        <lane id=":J0_0_1" index="1" speed="30.00" length="0.10" shape="39072.50,43255.97 39072.50,43255.97"/>
+        <lane id=":J0_0_2" index="2" speed="30.00" length="0.10" shape="39070.88,43258.73 39070.88,43258.73"/>
+    </edge>
     <edge id=":J1_0" function="internal">
         <lane id=":J1_0_0" index="0" speed="30.00" length="0.10" shape="38941.26,43175.25 38941.26,43175.25"/>
         <lane id=":J1_0_1" index="1" speed="30.00" length="0.10" shape="38939.64,43178.01 38939.64,43178.01"/>
@@ -61,6 +66,16 @@
         <lane id=":J2_0_2" index="2" speed="30.00" length="0.10" shape="38991.05,43211.89 38991.05,43211.89"/>
     </edge>
 
+    <edge id="detect_area" from="J2" to="J0" priority="-1">
+        <lane id="detect_area_0" index="0" speed="30.00" length="92.56" shape="38994.29,43206.37 39074.12,43253.21"/>
+        <lane id="detect_area_1" index="1" speed="30.00" length="92.56" shape="38992.67,43209.13 39072.50,43255.97"/>
+        <lane id="detect_area_2" index="2" speed="30.00" length="92.56" shape="38991.05,43211.89 39070.88,43258.73"/>
+    </edge>
+    <edge id="effect_area_1" from="J13" to="J1" priority="-1">
+        <lane id="effect_area_1_0" index="0" speed="30.00" length="147.37" shape="38814.16,43100.67 38941.26,43175.25"/>
+        <lane id="effect_area_1_1" index="1" speed="30.00" length="147.37" shape="38812.54,43103.43 38939.64,43178.01"/>
+        <lane id="effect_area_1_2" index="2" speed="30.00" length="147.37" shape="38810.92,43106.19 38938.02,43180.77"/>
+    </edge>
     <edge id="entry" from="J10" to="J13" priority="-1">
         <lane id="entry_0" index="0" speed="13.89" length="46.30" shape="38774.23,43077.24 38814.16,43100.67"/>
         <lane id="entry_1" index="1" speed="13.89" length="46.30" shape="38772.61,43080.00 38812.54,43103.43"/>
@@ -71,15 +86,10 @@
         <lane id="exit_1" index="1" speed="13.89" length="57.04" shape="121479.92,91612.02 121529.12,91640.89"/>
         <lane id="exit_2" index="2" speed="13.89" length="57.04" shape="121478.30,91614.78 121527.50,91643.65"/>
     </edge>
-    <edge id="long_road" from="J13" to="J1" priority="-1">
-        <lane id="long_road_0" index="0" speed="30.00" length="147.36" shape="38814.16,43100.67 38941.26,43175.25"/>
-        <lane id="long_road_1" index="1" speed="30.00" length="147.36" shape="38812.54,43103.43 38939.64,43178.01"/>
-        <lane id="long_road_2" index="2" speed="30.00" length="147.36" shape="38810.92,43106.19 38938.02,43180.77"/>
-    </edge>
-    <edge id="long_road.208" from="J2" to="J14" priority="-1">
-        <lane id="long_road.208_0" index="0" speed="30.00" length="95639.87" shape="38994.29,43206.37 121481.54,91609.26"/>
-        <lane id="long_road.208_1" index="1" speed="30.00" length="95639.87" shape="38992.67,43209.13 121479.92,91612.02"/>
-        <lane id="long_road.208_2" index="2" speed="30.00" length="95639.87" shape="38991.05,43211.89 121478.30,91614.78"/>
+    <edge id="long_road" from="J0" to="J14" priority="-1">
+        <lane id="long_road_0" index="0" speed="30.00" length="95547.32" shape="39074.12,43253.21 121481.54,91609.26"/>
+        <lane id="long_road_1" index="1" speed="30.00" length="95547.32" shape="39072.50,43255.97 121479.92,91612.02"/>
+        <lane id="long_road_2" index="2" speed="30.00" length="95547.32" shape="39070.88,43258.73 121478.30,91614.78"/>
     </edge>
     <edge id="slow_area" from="J1" to="J2" priority="-1">
         <lane id="slow_area_0" index="0" speed="30.00" length="61.49" shape="38941.26,43175.25 38994.29,43206.37"/>
@@ -87,7 +97,12 @@
         <lane id="slow_area_2" index="2" speed="30.00" length="61.49" shape="38938.02,43180.77 38991.05,43211.89"/>
     </edge>
 
-    <junction id="J1" type="priority" x="38937.21" y="43182.15" incLanes="long_road_0 long_road_1 long_road_2" intLanes=":J1_0_0 :J1_0_1 :J1_0_2" shape="38937.21,43182.15 38942.07,43173.87 38937.21,43182.15">
+    <junction id="J0" type="priority" x="39070.07" y="43260.11" incLanes="detect_area_0 detect_area_1 detect_area_2" intLanes=":J0_0_0 :J0_0_1 :J0_0_2" shape="39070.07,43260.11 39074.93,43251.83 39070.07,43260.11">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="J1" type="priority" x="38937.21" y="43182.15" incLanes="effect_area_1_0 effect_area_1_1 effect_area_1_2" intLanes=":J1_0_0 :J1_0_1 :J1_0_2" shape="38937.21,43182.15 38942.07,43173.87 38937.21,43182.15">
         <request index="0" response="000" foes="000" cont="0"/>
         <request index="1" response="000" foes="000" cont="0"/>
         <request index="2" response="000" foes="000" cont="0"/>
@@ -99,7 +114,7 @@
         <request index="1" response="000" foes="000" cont="0"/>
         <request index="2" response="000" foes="000" cont="0"/>
     </junction>
-    <junction id="J14" type="priority" x="121477.49" y="91616.16" incLanes="long_road.208_0 long_road.208_1 long_road.208_2" intLanes=":J14_0_0 :J14_0_1 :J14_0_2" shape="121477.49,91616.16 121482.35,91607.88 121477.49,91616.16">
+    <junction id="J14" type="priority" x="121477.49" y="91616.16" incLanes="long_road_0 long_road_1 long_road_2" intLanes=":J14_0_0 :J14_0_1 :J14_0_2" shape="121477.49,91616.16 121482.35,91607.88 121477.49,91616.16">
         <request index="0" response="000" foes="000" cont="0"/>
         <request index="1" response="000" foes="000" cont="0"/>
         <request index="2" response="000" foes="000" cont="0"/>
@@ -110,30 +125,36 @@
         <request index="2" response="000" foes="000" cont="0"/>
     </junction>
 
-    <connection from="entry" to="long_road" fromLane="0" toLane="0" via=":J13_0_0" dir="s" state="M"/>
-    <connection from="entry" to="long_road" fromLane="1" toLane="1" via=":J13_0_1" dir="s" state="M"/>
-    <connection from="entry" to="long_road" fromLane="2" toLane="2" via=":J13_0_2" dir="s" state="M"/>
-    <connection from="long_road" to="slow_area" fromLane="0" toLane="0" via=":J1_0_0" dir="s" state="M"/>
-    <connection from="long_road" to="slow_area" fromLane="1" toLane="1" via=":J1_0_1" dir="s" state="M"/>
-    <connection from="long_road" to="slow_area" fromLane="2" toLane="2" via=":J1_0_2" dir="s" state="M"/>
-    <connection from="long_road.208" to="exit" fromLane="0" toLane="0" via=":J14_0_0" dir="s" state="M"/>
-    <connection from="long_road.208" to="exit" fromLane="1" toLane="1" via=":J14_0_1" dir="s" state="M"/>
-    <connection from="long_road.208" to="exit" fromLane="2" toLane="2" via=":J14_0_2" dir="s" state="M"/>
-    <connection from="slow_area" to="long_road.208" fromLane="0" toLane="0" via=":J2_0_0" dir="s" state="M"/>
-    <connection from="slow_area" to="long_road.208" fromLane="1" toLane="1" via=":J2_0_1" dir="s" state="M"/>
-    <connection from="slow_area" to="long_road.208" fromLane="2" toLane="2" via=":J2_0_2" dir="s" state="M"/>
+    <connection from="detect_area" to="long_road" fromLane="0" toLane="0" via=":J0_0_0" dir="s" state="M"/>
+    <connection from="detect_area" to="long_road" fromLane="1" toLane="1" via=":J0_0_1" dir="s" state="M"/>
+    <connection from="detect_area" to="long_road" fromLane="2" toLane="2" via=":J0_0_2" dir="s" state="M"/>
+    <connection from="effect_area_1" to="slow_area" fromLane="0" toLane="0" via=":J1_0_0" dir="s" state="M"/>
+    <connection from="effect_area_1" to="slow_area" fromLane="1" toLane="1" via=":J1_0_1" dir="s" state="M"/>
+    <connection from="effect_area_1" to="slow_area" fromLane="2" toLane="2" via=":J1_0_2" dir="s" state="M"/>
+    <connection from="entry" to="effect_area_1" fromLane="0" toLane="0" via=":J13_0_0" dir="s" state="M"/>
+    <connection from="entry" to="effect_area_1" fromLane="1" toLane="1" via=":J13_0_1" dir="s" state="M"/>
+    <connection from="entry" to="effect_area_1" fromLane="2" toLane="2" via=":J13_0_2" dir="s" state="M"/>
+    <connection from="long_road" to="exit" fromLane="0" toLane="0" via=":J14_0_0" dir="s" state="M"/>
+    <connection from="long_road" to="exit" fromLane="1" toLane="1" via=":J14_0_1" dir="s" state="M"/>
+    <connection from="long_road" to="exit" fromLane="2" toLane="2" via=":J14_0_2" dir="s" state="M"/>
+    <connection from="slow_area" to="detect_area" fromLane="0" toLane="0" via=":J2_0_0" dir="s" state="M"/>
+    <connection from="slow_area" to="detect_area" fromLane="1" toLane="1" via=":J2_0_1" dir="s" state="M"/>
+    <connection from="slow_area" to="detect_area" fromLane="2" toLane="2" via=":J2_0_2" dir="s" state="M"/>
 
+    <connection from=":J0_0" to="long_road" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":J0_0" to="long_road" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":J0_0" to="long_road" fromLane="2" toLane="2" dir="s" state="M"/>
     <connection from=":J1_0" to="slow_area" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":J1_0" to="slow_area" fromLane="1" toLane="1" dir="s" state="M"/>
     <connection from=":J1_0" to="slow_area" fromLane="2" toLane="2" dir="s" state="M"/>
-    <connection from=":J13_0" to="long_road" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":J13_0" to="long_road" fromLane="1" toLane="1" dir="s" state="M"/>
-    <connection from=":J13_0" to="long_road" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":J13_0" to="effect_area_1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":J13_0" to="effect_area_1" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":J13_0" to="effect_area_1" fromLane="2" toLane="2" dir="s" state="M"/>
     <connection from=":J14_0" to="exit" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":J14_0" to="exit" fromLane="1" toLane="1" dir="s" state="M"/>
     <connection from=":J14_0" to="exit" fromLane="2" toLane="2" dir="s" state="M"/>
-    <connection from=":J2_0" to="long_road.208" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":J2_0" to="long_road.208" fromLane="1" toLane="1" dir="s" state="M"/>
-    <connection from=":J2_0" to="long_road.208" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":J2_0" to="detect_area" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":J2_0" to="detect_area" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":J2_0" to="detect_area" fromLane="2" toLane="2" dir="s" state="M"/>
 
 </net>
